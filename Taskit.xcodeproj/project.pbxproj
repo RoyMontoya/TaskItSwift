@@ -16,6 +16,7 @@
 		056139EA1C914B790014BAF6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056139E91C914B790014BAF6 /* TaskCell.swift */; };
 		05A0724A1C952C35007534AD /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A072491C952C35007534AD /* TaskModel.swift */; };
 		05A0724E1C953164007534AD /* TaskDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0724D1C953164007534AD /* TaskDetialViewController.swift */; };
+		05F8FEFE1C992983004FD665 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8FEFD1C992983004FD665 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		056139E91C914B790014BAF6 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		05A072491C952C35007534AD /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		05A0724D1C953164007534AD /* TaskDetialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetialViewController.swift; sourceTree = "<group>"; };
+		05F8FEFD1C992983004FD665 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				056139D61C9145130014BAF6 /* ViewController.swift */,
 				05A0724D1C953164007534AD /* TaskDetialViewController.swift */,
 				05A072491C952C35007534AD /* TaskModel.swift */,
+				05F8FEFD1C992983004FD665 /* Date.swift */,
 				056139D81C9145130014BAF6 /* Main.storyboard */,
 				056139E91C914B790014BAF6 /* TaskCell.swift */,
 				056139DE1C9145130014BAF6 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			files = (
 				056139EA1C914B790014BAF6 /* TaskCell.swift in Sources */,
 				056139DD1C9145130014BAF6 /* Taskit.xcdatamodeld in Sources */,
+				05F8FEFE1C992983004FD665 /* Date.swift in Sources */,
 				05A0724A1C952C35007534AD /* TaskModel.swift in Sources */,
 				056139D71C9145130014BAF6 /* ViewController.swift in Sources */,
 				05A0724E1C953164007534AD /* TaskDetialViewController.swift in Sources */,
