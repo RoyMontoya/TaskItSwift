@@ -54,14 +54,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.taskLabel.text = thisTask.task
         cell.descriptionLabel.text = thisTask.subTask
-        cell.dateLabel.text = ""
+        cell.dateLabel.text = Date.toString(thisTask.date)
         
         return cell
     }
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
-        performSegueWithIdentifier("showTaskDetail", sender: indexPath)
+        performSegueWithIdentifier("showTaskDetail", sender: self)
     }
     
     
