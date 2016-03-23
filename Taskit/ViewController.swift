@@ -32,11 +32,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTaskDetail" {
             let detailVC: TaskDetialViewController = segue.destinationViewController as! TaskDetialViewController
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            let thisTask = taskArray[indexPath.row]
+            let indexPath = self.tableView.indexPathForSelectedRow      
+            let thisTask = taskArray[indexPath!.row]
             detailVC.detailTaskModel = thisTask
         } 
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,11 +61,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        performSegueWithIdentifier("showTaskDetail", sender: self)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     
+    @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+        self.performSegueWithIdentifier("showTaskAdd", sender: self)
+    }
     
     
 }
