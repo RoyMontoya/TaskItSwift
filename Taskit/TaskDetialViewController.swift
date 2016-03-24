@@ -10,10 +10,14 @@ import UIKit
 
 class TaskDetialViewController: UIViewController {
     
-    var detailTaskModel: TaskModel!
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var subTaskTextField: UITextField!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
+    
+    var detailTaskModel: TaskModel!
+    var MainVC: ViewController!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,4 +36,13 @@ class TaskDetialViewController: UIViewController {
     @IBAction func cancelButtonTapped(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    
+    @IBAction func doneBarButtonPressed(sender: UIBarButtonItem) {
+        
+        let task = TaskModel(task: taskTextField.text!, subTask: subTaskTextField.text!, date: dueDatePicker.date, completed: false)
+        MainVC.baseArray[0][MainVC.tableView.indexPathForSelectedRow!.row] = task
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
 }

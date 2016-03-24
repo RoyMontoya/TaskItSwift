@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tasks-->
@@ -26,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h8N-7p-sEY" id="2lP-aO-mpw">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-Dq-t9g">
@@ -137,6 +136,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-E6-KRC">
                                 <rect key="frame" x="242" y="20" width="78" height="30"/>
                                 <state key="normal" title="AddTask"/>
+                                <connections>
+                                    <action selector="addTaskButtonTapped:" destination="Xue-z9-lep" eventType="touchUpInside" id="Tnf-2u-lI1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTL-xf-9bW">
                                 <rect key="frame" x="20" y="20" width="61" height="30"/>
@@ -148,6 +150,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="dueDatePicker" destination="avx-Hs-zXP" id="QW0-3S-BDW"/>
+                        <outlet property="subTaskTextField" destination="LcU-eJ-Ojy" id="X7Y-Eo-LFL"/>
+                        <outlet property="taskTextField" destination="f18-tj-1tX" id="29z-Wd-jja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8S-lz-shp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,10 +200,11 @@
                                 <action selector="cancelButtonTapped:" destination="JuJ-Iw-qM8" id="w0h-dd-qFm"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Done" id="HEe-Nv-cmf"/>
-                            <barButtonItem title="Item" id="5sQ-9Y-rcq"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="HEe-Nv-cmf">
+                            <connections>
+                                <action selector="doneBarButtonPressed:" destination="JuJ-Iw-qM8" id="YxR-Om-ONz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
