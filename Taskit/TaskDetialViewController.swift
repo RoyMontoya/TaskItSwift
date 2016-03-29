@@ -15,7 +15,7 @@ class TaskDetialViewController: UIViewController {
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     var detailTaskModel: TaskModel!
-    var MainVC: ViewController!
+   
     
     
     
@@ -24,8 +24,8 @@ class TaskDetialViewController: UIViewController {
         
         print(detailTaskModel.task)
         self.taskTextField.text = detailTaskModel.task
-        self.subTaskTextField.text = detailTaskModel.subTask
-        self.dueDatePicker.date = detailTaskModel.date
+        self.subTaskTextField.text = detailTaskModel.subtask
+        self.dueDatePicker.date = detailTaskModel.date!
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,9 +39,16 @@ class TaskDetialViewController: UIViewController {
     
     
     @IBAction func doneBarButtonPressed(sender: UIBarButtonItem) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let task = TaskModel(task: taskTextField.text!, subTask: subTaskTextField.text!, date: dueDatePicker.date, completed: false)
-        MainVC.baseArray[0][MainVC.tableView.indexPathForSelectedRow!.row] = task
+        detailTaskModel.task = taskTextField.text
+        detailTaskModel.subtask = subTaskTextField.text
+        detailTaskModel.date = dueDatePicker.date
+        detailTaskModel.completed = detailTaskModel.completed
+        
+        appDelegate.saveContext()
+        
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
     

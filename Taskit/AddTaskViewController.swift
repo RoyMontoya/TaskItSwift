@@ -14,7 +14,7 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var subTaskTextField: UITextField!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
-    var mainVC: ViewController!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +45,17 @@ class AddTaskViewController: UIViewController {
         
         var request = NSFetchRequest(entityName: "TaskModel")
         var error:NSError? = nil
+        var results:NSArray = []
         
-        var results:NSArray = manageObjectContext.executeFetchRequest(request)
+        do {
+         results = try manageObjectContext.executeFetchRequest(request)
+        }
+        catch let error as NSError {
+            print(error)
+        }
+        catch {
+        }
+     
         
         for res in results {
             
